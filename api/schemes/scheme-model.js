@@ -4,4 +4,13 @@ module.exports = {
   find() {
     return db("schemes");
   },
+  findById(id) {
+    return db("schemes").where("id", id);
+  },
+  add(scheme) {
+    return db("schemes").insert(scheme);
+  },
+  remove(id) {
+    return db("schemes").where("id", id).del();
+  },
 };
